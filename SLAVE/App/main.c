@@ -51,7 +51,7 @@ int main(void){
 
 
 
-		if(strcmp(data , "NB")==0){
+		if(strcmp(data , "NB")==0){		//for comparising between the recieving data and the condition 
 
 			LCD_enuSendCommand(0X01);		//for clearing the LCD
 			DCMOTOR_enuSetSpeed(65);
