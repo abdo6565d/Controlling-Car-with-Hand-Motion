@@ -5,22 +5,7 @@
  *  Created on: May 30, 2022
  *      Author: DELL
  */
-#define PORTA 		*((volatile u8*)0x3B)
-#define DDRA 		*((volatile u8*)0x3A)
-#define PINA 		*((volatile u8*)0x39)
 
-#define PORTB 		*((volatile u8*)56)
-#define DDRB 		*((volatile u8*)0x37)
-#define PINB 		*((volatile u8*)0x36)
-
-#define PORTC 		*((volatile u8*)0x35)
-#define DDRC 		*((volatile u8*)0x34)
-#define PINC 		*((volatile u8*)0x33)
-
-#define PORTD 		*((volatile u8*)0x32)
-#define DDRD 		*((volatile u8*)0x31)
-
-#define PIND 		*((volatile u8*)0x30)
 #define CLW		37
 #define ACLW	47
 #define A		0
@@ -59,21 +44,21 @@ int main(void){
 	while (1)
 	{
 
-		_delay_ms(500);
+		_delay_ms(500);		//to make the reciever more accurate
 
 		DCMOTOR_Start();
-		UART_enuRecieveString(&data);
+		UART_enuRecieveString(&data);		//recieving the data from Master
 
 
 
 		if(strcmp(data , "NB")==0){
 
-			LCD_enuSendCommand(0X01);
+			LCD_enuSendCommand(0X01);		//for clearing the LCD
 			DCMOTOR_enuSetSpeed(65);
 			DCMOTOR_enuSetDirectionAndMotorNum(CLW,A);
 			DCMOTOR_enuSetDirectionAndMotorNum(CLW,B);
 			LCD_enuSendString("Direction: Back");
-			LCD_enuGoToPosition(1,0);
+			LCD_enuGoToPosition(1,0);		//for moving from the first Row to the second Row
 			LCD_enuSendString("Speed : Normal");
 
 		}
@@ -155,9 +140,9 @@ int main(void){
 			LCD_enuSendCommand(0X01);
 			DCMOTOR_enuSetDirectionAndMotorNum(STOP,A);
 			DCMOTOR_enuSetDirectionAndMotorNum(STOP,B);
-			LCD_enuGoToPosition(0,7);
+			LCD_enuGoToPosition(0,7);		//for moving from the column num(0)to the column num(8)
 			LCD_enuSendString("CAR");
-			LCD_enuGoToPosition(1,3);
+			LCD_enuGoToPosition(1,3);		//for moving from the first Row to the second Row,from the column num(0)to the column num(4)
 			LCD_enuSendString("IS STOPPED");
 
 
