@@ -51,7 +51,7 @@ ES_t UART_enuInit(void)
 	Local_u8UCSRC |=(1<<7);
 	UCSRC = Local_u8UCSRC;
 
-
+			//for calculating the BAUDRATE
 	u16 Local_u16UBRR = BUAD(BAUDRATE);
 
 	Local_u16UBRR &=~(1<<15);
