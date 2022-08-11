@@ -15,7 +15,7 @@
 #include "../MCAL/UART/UART_int.h"
 
 #include <util/delay.h>
-
+//the calibration that i used for holding or openning the fingers in the glove
 #define Open      < 800
 #define Hold      > 800
 
@@ -24,7 +24,7 @@
 
 int main(void){
 
-	u16  THUMB,INDEX,MIDDLE,RING,LITTLE;
+	u16  THUMB,INDEX,MIDDLE,RING,LITTLE;	//variables of the fingers
 	DIO_enuInit();
 	ADC_INIT();
 	UART_enuInit();
@@ -104,7 +104,7 @@ int main(void){
 			UART_enuSendString("ST");
 			UART_enuSendString("\r\n");
 		}
-		_delay_ms(1000);
+		_delay_ms(1000);			// to make the conversion more accurate
 
 	}
 
