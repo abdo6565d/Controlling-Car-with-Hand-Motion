@@ -140,9 +140,9 @@ int main(void){
 			LCD_enuSendCommand(0X01);
 			DCMOTOR_enuSetDirectionAndMotorNum(STOP,A);
 			DCMOTOR_enuSetDirectionAndMotorNum(STOP,B);
-			LCD_enuGoToPosition(0,7);		//for moving from the column num(0)to the column num(8)
+			LCD_enuGoToPosition(0,7);		//for moving from the column num(0)to the column num(7)
 			LCD_enuSendString("CAR");
-			LCD_enuGoToPosition(1,3);		//for moving from the first Row to the second Row,from the column num(0)to the column num(4)
+			LCD_enuGoToPosition(1,3);		//for moving from the first Row to the second Row,from the column num(0)to the column num(3)
 			LCD_enuSendString("IS STOPPED");
 
 
