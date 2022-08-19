@@ -135,32 +135,3 @@ ES_t UART_enuRecieveString(char * Copy_pcData)
 
 
 
-/*  \r =13 , \n */
-/*ES_t UART_enuRecieveString(char * Copy_pcData)
-{
-	ES_t Local_enuErrorState = ES_NOK;
-
-	u8 Local_u8Data=0 , Local_u8Index=0;
-	u8 Local_u8Termination;
-
-	while (!((UCSRA>>RXC)&1));
-		Local_u8Termination = UDR;
-
-	while (1)
-	{
-		while (!((UCSRA>>RXC)&1));
-		Local_u8Data = UDR;
-
-		if (Local_u8Data == Local_u8Termination)
-		{
-			Copy_pcData[Local_u8Index]='\0';
-			break;
-		}
-		Copy_pcData[Local_u8Index]=Local_u8Data;
-		Local_u8Index++;
-	}
-
-
-	return Local_enuErrorState;
-}
-*/
